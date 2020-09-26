@@ -18,3 +18,20 @@ PS C:\PrjPraticar\RocketSeat\Adonis-RSXP> adonis new backend --api-only --yarn
 
 $ cd backend
 $ adonis serve --dev
+--------
+Testes:
+adonis install @adonisjs/vow --yarn
+Após colar o provider mostrado no Browser, criar o env.test, copiar o exemplo do .env.example e na sequencia rodar o comando
+adonis key:generate
+Isso irá gera um APP_KEY=0zwStei7GdOuSjkFGUt3le3dLL4amhbl no arquivo .env
+
+SQLite: (Ambiente de Desenvolvimento)
+yarn add sqlite3 -D
+
+PostgrSQL:  (Ambiente de Produção)
+yarn add pg
+
+Criando o Controller
+adonis make:controller nome-controller
+
+
