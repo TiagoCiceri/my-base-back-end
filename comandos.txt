@@ -33,5 +33,24 @@ yarn add pg
 
 Criando o Controller
 adonis make:controller nome-controller
+adonis make:controller Session
+adonis make:controller ForgotPassword
+adonis make:controller ResetPassword
+
+Controlar E-mail:
+adonis install @adonisjs/mail --yarn
+Observação: o e-mail usa a parte de VIEW do Adonis então devemos adicionar o PROVIDER no app.js
+const providers = [
+  '@adonisjs/framework/providers/ViewProvider'
+]
 
 
+Plugin VSCode:
+Edge template support
+
+Trabalhando com Data:
+yarn add date-fns
+
+Instalar o ESlint
+yarn add eslint -D
+yarn eslint --init 
