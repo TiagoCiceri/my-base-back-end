@@ -1,4 +1,4 @@
-'use strict'
+
 
 const { isBefore, parseISO, subHours } = require('date-fns');
 

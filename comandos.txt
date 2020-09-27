@@ -54,3 +54,24 @@ yarn add date-fns
 Instalar o ESlint
 yarn add eslint -D
 yarn eslint --init 
+yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+yarn eslint --fix app --ext .js
+
+Validações:
+adonis install @adonisjs/validator --yarn
+const providers = [
+  '@adonisjs/validator/providers/ValidatorProvider'
+]
+adonis make:validator Session
+
+
+Rodar o Servidor:
+adonis serve --dev
+
+Como criar um usuário pelo Adonis utilizando o Models:
+adonis repl  (tecle enter...)
+const User = use('App/Models/User')   (tecle enter...)
+User.create({username: "Anderson Tiago", email: "tiagociceri@gemail.com", password: "123456"})
+
+Testar serviço de email ( mailtrap ) criar uma conta
+
