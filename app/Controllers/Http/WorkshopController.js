@@ -25,7 +25,7 @@ class WorkshopController {
     const workshop = await Workshop
       .query()
       .with('user', builder => {
-        builder.select(['id', 'username']);
+        builder.select(['id', 'username', 'avatar']);
       })
       .fetch();
 
@@ -79,7 +79,7 @@ class WorkshopController {
 
     //linha abaixo é devido ter relacionamento.
     await workshop.load('user', builder => {
-      builder.select(['id', 'username']);
+      builder.select(['id', 'username', 'avatar']);
     });
 
     return workshop;

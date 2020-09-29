@@ -36,9 +36,11 @@ adonis make:controller nome-controller
 adonis make:controller Session
 adonis make:controller ForgotPassword
 adonis make:controller ResetPassword
+adonis make:controller File
 
 Criando o Model, Controller e Migration
 adonis make:model Workshop -m -c
+adonis make:model File -m -c
 
 Controlar E-mail:
 adonis install @adonisjs/mail --yarn
@@ -69,6 +71,9 @@ adonis make:validator Workshop
 
 Migrations:
 adonis migration:run
+Para resetar tudo pode ser usar o REFRESH
+adonis migration:refresh
+
 
 Rodar o Servidor:
 adonis serve --dev
@@ -77,6 +82,7 @@ Como criar um usuário pelo Adonis utilizando o Models:
 adonis repl  (tecle enter...)
 const User = use('App/Models/User')   (tecle enter...)
 User.create({username: "Anderson Tiago", email: "tiagociceri@gemail.com", password: "123456"})
+User.create({username:"Priscila Ciceri", email:"priciceri@gmail.com", password: "123456"})
 
 Testar serviço de email ( mailtrap ) criar uma conta
 
