@@ -37,13 +37,15 @@ adonis make:controller Session
 adonis make:controller ForgotPassword
 adonis make:controller ResetPassword
 
+Criando o Model, Controller e Migration
+adonis make:model Workshop -m -c
+
 Controlar E-mail:
 adonis install @adonisjs/mail --yarn
 Observação: o e-mail usa a parte de VIEW do Adonis então devemos adicionar o PROVIDER no app.js
 const providers = [
   '@adonisjs/framework/providers/ViewProvider'
 ]
-
 
 Plugin VSCode:
 Edge template support
@@ -63,7 +65,10 @@ const providers = [
   '@adonisjs/validator/providers/ValidatorProvider'
 ]
 adonis make:validator Session
+adonis make:validator Workshop
 
+Migrations:
+adonis migration:run
 
 Rodar o Servidor:
 adonis serve --dev
@@ -75,3 +80,11 @@ User.create({username: "Anderson Tiago", email: "tiagociceri@gemail.com", passwo
 
 Testar serviço de email ( mailtrap ) criar uma conta
 
+Criação de Provider:
+adonis make:provider CustomValidation
+
+Internacionalização:
+adonis install @adonisjs/antl --yarn
+const providers = [
+  '@adonisjs/antl/providers/AntlProvider'
+]

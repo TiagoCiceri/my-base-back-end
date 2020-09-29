@@ -16,10 +16,18 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-
+//Authentication
 Route.post('/sessions', 'SessionController.store').validator('Session');
 Route.post('/forgot', 'ForgotPasswordController.store').validator('Forgot');
 Route.post('/reset', 'ResetPasswordController.store').validator('Reset');
+
+Route.group(() => {
+  Route.get('/workshops', 'WorkshopController.index');
+  Route.get('/workshops/:id', 'WorkshopController.show');
+  Route.post('/workshops', 'WorkshopController.store').validator('Workshop');
+}).middleware('auth');
+
+
 
 /*
 Route.get('/', () => {
