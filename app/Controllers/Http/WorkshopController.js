@@ -106,6 +106,20 @@ class WorkshopController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    const data = request.only([
+      'title',
+      'description',
+      'user_id',
+      'section',
+    ]);
+
+    const workshop = await Workshop.find(params.id);
+
+    workshop.merge(data);
+
+    await workshop.save();
+
+    return workshop;
   }
 
   /**
@@ -117,6 +131,9 @@ class WorkshopController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const workshop = await Workshop.find(params.id);
+
+    await workshop.delete();    
   }
 }
 
