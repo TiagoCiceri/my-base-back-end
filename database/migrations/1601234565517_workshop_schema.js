@@ -13,7 +13,11 @@ class WorkshopSchema extends Schema {
         .references('id')
         .inTable('users')
         .onDelete('SET NULL')
-        .onUpdate('CASCADE')
+        .onUpdate('CASCADE')     
+      table
+        .string('color', 20)
+        .notNullable()
+        .defaultTo('#7159c1')
       table.string('title', 80).notNullable()
       table.text('description').notNullable()
       table.enu('section',[1, 2, 3]).notNullable()

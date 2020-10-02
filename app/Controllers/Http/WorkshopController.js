@@ -22,8 +22,11 @@ class WorkshopController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    const section = request.input('section', 1);
+
     const workshop = await Workshop
       .query()
+      .where('section', section)
       .with('user', builder => {
         builder.select(['id', 'username', 'avatar']);
       })
@@ -58,6 +61,7 @@ class WorkshopController {
       'description',
       'user_id',
       'section',
+      'color',
     ]);
 
     const workshop = await Workshop.create(data);
@@ -111,6 +115,7 @@ class WorkshopController {
       'description',
       'user_id',
       'section',
+      'color',
     ]);
 
     const workshop = await Workshop.find(params.id);
